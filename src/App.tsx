@@ -1,25 +1,28 @@
-import Header from "./components/Header/Header.tsx";
-import CityButton from "./components/CityButton/CityButton.tsx";
 import "./App.css";
+import { useState } from "react";
+import Header from "./components/Header/Header.tsx";
+import Sidebar from "./components/Sidebar/Sidebar.tsx";
+import WeatherInfo from "./components/WeatherInfo/WeatherInfo.tsx";
 
 export default function App() {
-  const cities = ["Ulyanovsk", "Moscow", "New York", "Vladivostok", "London"];
-  const handleCityButtonClick = () => {};
+  const [weatherCity, setWeatherCity] = useState("");
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleError = (e: string) => {
+    // for modal
+
+    setError(true);
+    setErrorMessage(e);
+  };
 
   return (
-    <div className="mainFragment">
+    <div className="mainContainer">
       <Header />
-      <ul>
-        {cities.map((city) => (
-          <li key={city}>
-            <CityButton
-              cityName={city}
-              selected={false}
-              onCityButtonClick={handleCityButtonClick}
-            />
-          </li>
-        ))}
-      </ul>
+      <div className="contentContainer">
+        <Sidebar onCityChange={setWeatherCity} onError={handleError} />
+        <WeatherInfo weatherData={weatherCity} />
+      </div>
     </div>
   );
 }

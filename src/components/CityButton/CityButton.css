@@ -1,0 +1,25 @@
+button {
+  width: 350px;
+  height: 40px;
+  border: #000 solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family:
+    Comic Sans MS,
+    Comic Sans,
+    cursive;
+  font-size: 20px;
+}
+
+.cityButton {
+  background: transparent;
+}
+
+.cityButton:hover {
+  background: lightskyblue;
+}
+
+.cityButtonActive {
+  background: lightskyblue;
+}
