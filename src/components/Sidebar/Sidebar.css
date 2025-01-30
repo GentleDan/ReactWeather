@@ -1,50 +1,79 @@
-.citiesContainer {
+.sidebar {
+  width: 420px;
   height: 480px;
-  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.citiesContainerContent {
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.city-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.search-button {
+  width: 100%;
+  background-color: lightskyblue;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:disabled {
+  background-color: lightgray;
+}
+
+.city-list {
   overflow: hidden auto;
-  height: 380px;
-  width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.citiesContainerContent::-webkit-scrollbar {
+.city-list::-webkit-scrollbar {
   width: 12px;
 }
 
-.citiesContainerContent::-webkit-scrollbar-track {
+.city-list::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 8px;
 }
 
-.citiesContainerContent::-webkit-scrollbar-thumb {
+.city-list::-webkit-scrollbar-thumb {
   background: lightskyblue;
   border-radius: 8px;
 }
 
-.citiesContainerContent::-webkit-scrollbar-thumb:hover {
+.city-list::-webkit-scrollbar-thumb:hover {
   background: deepskyblue;
 }
 
-.cityInput {
-  margin: 10px 40px 15px 40px;
-  width: 350px;
-  height: 40px;
-  border: #000 solid 1px;
-  border-radius: 5px;
-  font-family:
-    Comic Sans MS,
-    Comic Sans,
-    cursive;
-  font-size: 20px;
+.city-list ul {
+  padding: 0 20px;
 }
 
-li {
-  margin: 5px 0;
+.city-list li {
   list-style: none;
+  margin-bottom: 10px;
 }
 
-.citiesContent-hr {
+.divider {
   width: 75%;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
 }

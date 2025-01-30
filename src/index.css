@@ -1,7 +1,25 @@
-body {
-  background: #f6f5f1;
+body,
+button,
+input {
   font-family:
     Comic Sans MS,
     Comic Sans,
     cursive;
+  font-size: 20px;
+}
+
+body {
+  background: #f6f5f1;
+}
+
+button {
+  width: 350px;
+  height: 40px;
+  border: #000 solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  background: lightskyblue;
+  color: black;
+  text-align: center;
 }

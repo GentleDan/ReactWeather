@@ -1,17 +1,32 @@
-.mainContainer {
-  background: #ffffff;
-  border: #333333 1px solid;
+/* TODO: dark mode style */
+
+.app-light,
+.app-dark {
+  background: #fff;
+  border: 1px solid #333;
   border-radius: 10px;
-  box-shadow: #333333 1px 1px;
-  position: fixed;
-  top: 180px;
-  left: 220px;
-  right: 220px;
-  bottom: 180px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   min-height: 350px;
   min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
 }
 
-.contentContainer {
+.main-content {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
+    margin: 0;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
 }

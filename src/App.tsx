@@ -1,27 +1,23 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./components/Header/Header.tsx";
-import Sidebar from "./components/Sidebar/Sidebar.tsx";
-import WeatherInfo from "./components/WeatherInfo/WeatherInfo.tsx";
+import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
+import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
 
 export default function App() {
-  const [weatherCity, setWeatherCity] = useState("");
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [weatherData, setWeatherData] = useState<string | null>(null);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
-  const handleError = (e: string) => {
-    // for modal
-
-    setError(true);
-    setErrorMessage(e);
+  const handleToggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   return (
-    <div className="mainContainer">
-      <Header />
-      <div className="contentContainer">
-        <Sidebar onCityChange={setWeatherCity} onError={handleError} />
-        <WeatherInfo weatherData={weatherCity} />
+    <div className={`app-${darkMode ? "dark" : "light"}`}>
+      <Header darkMode={darkMode} onToggleDarkMode={handleToggleDarkMode} />
+      <div className="main-content">
+        <Sidebar onCityChange={setWeatherData} />
+        <WeatherInfo weatherData={weatherData} />
       </div>
     </div>
   );
